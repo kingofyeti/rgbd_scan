@@ -3,8 +3,29 @@
 
 #include <opencv2/opencv.hpp>
 #include <iostream>
+#include <zlib\zlib.h>
+#include "global.h"
 
 using namespace cv;
+using namespace std;
+
+// Decompress the .klg log file
+void decompressLog(string filename);
+
+template <class T>
+int getNumberOfDigits(T number)
+{
+	int digits = 0;
+	if (number < 0)
+		digits = 1; // remove this line if '-' counts as a digit
+	while (number) 
+	{
+		number /= 10;
+		digits++;
+	}
+	return digits;
+}
+
 
 class ImageCompression
 {
@@ -38,10 +59,9 @@ public:
 		int res = compress2(depth_compress_buf, &depthSize, dataptr, width * height * sizeof(short), Z_BEST_SPEED);
 		//int res = compress(depth_compress_buf, &depthSize, (const Bytef*)dataptr, width * height * sizeof(short));
 		if (res != 0)
-		{
 			printf ("WARNING: Compression Error !\n");
-		}
 	}
+
 
 public:
 	//uint8_t *rgbBuffer;
@@ -50,5 +70,7 @@ public:
 	unsigned char * depth_compress_buf;
 	CvMat * encodedImage;
 };
+
+
 
 #endif

@@ -137,7 +137,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../include;$(OPENCV_DIR)/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../include;$(OPENCV_DIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,12 +149,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="imagecompression.cpp" />
     <ClCompile Include="IntelRSSensor.cpp" />
     <ClCompile Include="RGBDSensor.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ImageCompression.h" />
+    <ClInclude Include="global.h" />
+    <ClInclude Include="imagecompression.h" />
     <ClInclude Include="IntelRSSensor.h" />
     <ClInclude Include="RGBDSensor.h" />
   </ItemGroup>

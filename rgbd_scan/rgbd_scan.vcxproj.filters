@@ -4,10 +4,12 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RGBDSensor.cpp" />
     <ClCompile Include="IntelRSSensor.cpp" />
+    <ClCompile Include="imagecompression.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RGBDSensor.h" />
     <ClInclude Include="IntelRSSensor.h" />
-    <ClInclude Include="ImageCompression.h" />
+    <ClInclude Include="imagecompression.h" />
+    <ClInclude Include="global.h" />
   </ItemGroup>
 </Project>

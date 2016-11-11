@@ -4,20 +4,8 @@
 #include "RGBDSensor.h"
 #include <librealsense/rs.hpp>
 #include <zlib\zlib.h>
-#include "ImageCompression.h"
-
-template <class T>
-int getNumberOfDigits(T number)
-{
-	int digits = 0;
-	if (number < 0) 
-		digits = 1; // remove this line if '-' counts as a digit
-	while (number) {
-		number /= 10;
-		digits++;
-	}
-	return digits;
-}
+#include "imagecompression.h"
+#include "global.h"
 
 class IntelRSSensor : public RGBDSensor
 {

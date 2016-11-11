@@ -27,7 +27,6 @@ protected:
 	bool m_flagInitSuccessful;
 	bool m_flagScan;
 	bool m_flagShowImage;
-	float m_depthScaleFactor;
 };
 
 #endif

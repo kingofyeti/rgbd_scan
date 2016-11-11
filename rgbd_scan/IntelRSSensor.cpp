@@ -20,12 +20,10 @@ void IntelRSSensor::init(int colorWidth, int colorHeight, int depthWidth, int de
 
 	m_flagInitSuccessful = true;
 	m_flagScan = true;
-	m_numFrames = 500;
+	m_numFrames = 100;
 	m_numDevices = 1; 
 	m_frameIndex = 0;
-	m_flagShowImage = flagShowImage;
-	m_depthScaleFactor = 5.0;
-	
+	m_flagShowImage = flagShowImage;	
 }
 
 void IntelRSSensor::runScanning()
@@ -99,7 +97,7 @@ void IntelRSSensor::runScanning()
 		{
 			cv::Mat mImageDepth(m_depthHeight, m_depthWidth, CV_16UC1, (unsigned char*)depth_image);
 			cv::Mat mScaledDepth;
-			mImageDepth.convertTo(mScaledDepth, CV_16UC1, m_depthScaleFactor); // with scale
+			mImageDepth.convertTo(mScaledDepth, CV_16UC1, c_depthScaleFactor); // with scale
 			cv::imshow(strDepthWindowName, mScaledDepth);
 		}
 
