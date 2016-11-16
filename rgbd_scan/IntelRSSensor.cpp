@@ -148,7 +148,6 @@ void IntelRSSensor::runScanning()
 	fwrite(&m_frameIndex, sizeof(int32_t), 1, logFile);
 	fflush(logFile);
 	fclose(logFile);
-	m_frameIndex++;
 }
 
 void IntelRSSensor::logData(FILE* logFile,
