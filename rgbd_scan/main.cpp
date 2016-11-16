@@ -27,7 +27,9 @@ int main(int argc, char** argv)
 	string option(argv[1]), logFilename("saved.klg");
 	if (option == "-c")
 	{
-		string cameraType(argv[2]);
+		string cameraType("-intel");
+		if (argc > 2)
+			cameraType = string(argv[2]);
 		bool flagShowImage = false;
 		if (argc == 4)
 			logFilename = string(argv[3]);
